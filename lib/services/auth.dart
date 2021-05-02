@@ -120,7 +120,6 @@ class Auth implements AuthBase {
 
   // @override
   // Future<User> signInWithFacebook() {
-  //   // TODO: implement signInWithFacebook
   //   throw UnimplementedError();
   // }
 }
