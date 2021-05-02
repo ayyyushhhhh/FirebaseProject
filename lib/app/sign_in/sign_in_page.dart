@@ -33,9 +33,8 @@ class _SignInPageState extends State<SignInPage> {
       final auth = Provider.of<AuthBase>(context, listen: false);
       await auth.signInAnonymously();
     } on Exception catch (e) {
-      _showSignInError(context, e);
-    } finally {
       setState(() => _isLoading = false);
+      _showSignInError(context, e);
     }
   }
 
@@ -55,7 +54,7 @@ class _SignInPageState extends State<SignInPage> {
     try {
       setState(() => _isLoading = true);
       final auth = Provider.of<AuthBase>(context, listen: false);
-      await auth.signInWithFacebook();
+      //  await auth.signInWithFacebook();
     } on Exception catch (e) {
       _showSignInError(context, e);
     } finally {

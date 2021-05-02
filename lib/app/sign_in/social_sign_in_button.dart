@@ -1,5 +1,5 @@
+import 'package:firebase_course/common_widgets/custom_raised_button.dart';
 import 'package:flutter/material.dart';
-import 'package:time_tracker_flutter_course/common_widgets/custom_raised_button.dart';
 
 class SocialSignInButton extends CustomRaisedButton {
   SocialSignInButton({

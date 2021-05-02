@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_login_facebook/flutter_login_facebook.dart';
-
+//import 'package:flutter_login_facebook/flutter_login_facebook.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 abstract class AuthBase {
@@ -16,7 +15,7 @@ abstract class AuthBase {
 
   Future<User> signInWithGoogle();
 
-  Future<User> signInWithFacebook();
+//  Future<User> signInWithFacebook();
 
   Future<void> signOut();
 }
@@ -114,14 +113,14 @@ class Auth implements AuthBase {
   Future<void> signOut() async {
     final googleSignIn = GoogleSignIn();
     await googleSignIn.signOut();
-    final facebookLogin = FacebookLogin();
-    await facebookLogin.logOut();
+    // final facebookLogin = FacebookLogin();
+    //  await facebookLogin.logOut();
     await _firebaseAuth.signOut();
   }
 
-  @override
-  Future<User> signInWithFacebook() {
-    // TODO: implement signInWithFacebook
-    throw UnimplementedError();
-  }
+  // @override
+  // Future<User> signInWithFacebook() {
+  //   // TODO: implement signInWithFacebook
+  //   throw UnimplementedError();
+  // }
 }
