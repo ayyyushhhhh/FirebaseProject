@@ -5,30 +5,15 @@ import 'package:firebase_course/services/auth.dart';
 import 'package:flutter/cupertino.dart';
 
 class SignInBloc {
+  SignInBloc({@required this.auth, @required this.isLoading});
+  final ValueNotifier<bool> isLoading;
   final AuthBase auth;
-
-  final StreamController<bool> _isLoadingController = StreamController<bool>();
-
-  SignInBloc({@required this.auth});
-
-  Stream<bool> get isLoadingStream {
-    return _isLoadingController.stream;
-  }
-
-  void _setIsLoading(bool isLoading) {
-    return _isLoadingController.add(isLoading);
-  }
-
-  void dispose() {
-    _isLoadingController.close();
-  }
-
-  Future<User> _signIn(Future<User> Function() signInFunction) async {
+  Future<User> _signIn(Future<User> Function() signInMethod) async {
     try {
-      _setIsLoading(true);
-      return await signInFunction();
+      isLoading.value = true;
+      return await signInMethod();
     } catch (e) {
-      _setIsLoading(false);
+      isLoading.value = false;
       rethrow;
     }
   }
