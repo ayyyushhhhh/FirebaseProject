@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         title: 'Time Tracker',
         theme: ThemeData(
           primarySwatch: Colors.indigo,
+          fontFamily: "San Francisco ",
         ),
         home: LandingPage(),
       ),
