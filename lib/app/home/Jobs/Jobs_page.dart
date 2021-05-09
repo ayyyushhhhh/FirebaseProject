@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_course/app/home/Jobs/edit_job_page.dart';
 import 'package:firebase_course/app/home/Jobs/list_item_builder.dart';
+import 'package:firebase_course/app/home/job_entries/job_entries_page.dart';
 import 'package:firebase_course/app/home/models/jobs.dart';
-import 'package:firebase_course/common_widgets/empty_content.dart';
 import 'package:firebase_course/common_widgets/job_list_tile.dart';
 import 'package:firebase_course/common_widgets/show_alert_dialog.dart';
 import 'package:firebase_course/common_widgets/show_exception_alert_dialog.dart';
@@ -77,7 +77,7 @@ class JobsPage extends StatelessWidget {
               child: JobListTile(
                 job: job,
                 onTap: () {
-                  EditJobPage.show(context, job: job);
+                  JobEntriesPage.show(context, job);
                 },
               ),
             );
@@ -107,7 +107,10 @@ class JobsPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          EditJobPage.show(context);
+          EditJobPage.show(
+            context,
+            database: Provider.of<DataBase>(context, listen: false),
+          );
         },
         child: Icon(Icons.add),
       ),

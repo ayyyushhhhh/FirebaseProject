@@ -4,15 +4,14 @@ import 'package:firebase_course/common_widgets/show_exception_alert_dialog.dart'
 import 'package:firebase_course/services/database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class EditJobPage extends StatefulWidget {
   final DataBase dataBase;
   final Job job;
   const EditJobPage({Key key, @required this.dataBase, this.job})
       : super(key: key);
-  static Future<void> show(BuildContext context, {Job job}) async {
-    final database = Provider.of<DataBase>(context, listen: false);
+  static Future<void> show(BuildContext context,
+      {DataBase database, Job job}) async {
     await Navigator.push(
       context,
       MaterialPageRoute(

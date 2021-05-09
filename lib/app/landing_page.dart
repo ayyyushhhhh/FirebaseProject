@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_course/app/home/Jobs/Jobs_page.dart';
 import 'package:firebase_course/app/sign_in/sign_in_page.dart';
 import 'package:firebase_course/services/database.dart';
+import 'package:firebase_course/services/database.dart';
+import 'package:firebase_course/services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_course/services/auth.dart';

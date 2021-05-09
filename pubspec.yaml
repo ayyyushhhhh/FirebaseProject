@@ -29,6 +29,7 @@ dependencies:
   firebase_core: ^1.0.2
   font_awesome_flutter: ^9.0.0
   google_sign_in: ^5.0.1
+  intl: ^0.17.0
   provider: ^5.0.0
 
 dev_dependencies:
@@ -57,7 +58,7 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: San Francisco 
+    - family: San Francisco
       fonts:
         - asset: assets/fonts/SF-UI-Display-Regular.otf
         - asset: assets/fonts/SF-Compact-Text-Medium.otf
