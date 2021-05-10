@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_course/app/home/Jobs/Jobs_page.dart';
+import 'package:firebase_course/app/home/home_page.dart';
 import 'package:firebase_course/app/sign_in/sign_in_page.dart';
 import 'package:firebase_course/services/database.dart';
 import 'package:firebase_course/services/database.dart';
@@ -23,7 +24,7 @@ class LandingPage extends StatelessWidget {
           return Provider<DataBase>(
               create: (BuildContext context) =>
                   FireStoreDatabase(uid: user.uid),
-              child: JobsPage());
+              child: HomePage());
         }
         return Scaffold(
           body: Center(

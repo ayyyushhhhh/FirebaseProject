@@ -1,5 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_course/app/home/job_entries/date_time_picker.dart';
+import 'package:firebase_course/common_widgets/date_time_picker.dart';
 import 'package:firebase_course/app/home/job_entries/format.dart';
 import 'package:firebase_course/app/home/models/entry.dart';
 import 'package:firebase_course/app/home/models/jobs.dart';
@@ -17,7 +17,7 @@ class EntryPage extends StatefulWidget {
 
   static Future<void> show(
       {BuildContext context, DataBase database, Job job, Entry entry}) async {
-    await Navigator.of(context).push(
+    await Navigator.of(context, rootNavigator: true).push(
       MaterialPageRoute(
         builder: (context) =>
             EntryPage(database: database, job: job, entry: entry),
