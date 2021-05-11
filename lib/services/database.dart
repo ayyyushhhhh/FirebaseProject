@@ -44,7 +44,7 @@ class FireStoreDatabase implements DataBase {
 
   @override
   Stream<Job> jobStream({@required String jobID}) => _service.documentStream(
-      path: APIpath.entry(uid, jobID),
+      path: APIpath.job(uid: uid, jobID: jobID),
       builder: (data, documentID) => Job.fromMap(data, documentID));
 
   @override

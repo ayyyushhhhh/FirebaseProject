@@ -15,16 +15,16 @@ import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
 class JobEntriesPage extends StatelessWidget {
-  const JobEntriesPage({@required this.database, @required this.job});
+  const JobEntriesPage({@required this.database, @required this.jobEntry});
   final DataBase database;
-  final Job job;
+  final Job jobEntry;
 
   static Future<void> show(BuildContext context, Job job) async {
     final database = Provider.of<DataBase>(context, listen: false);
     await Navigator.of(context).push(
       MaterialPageRoute(
         fullscreenDialog: false,
-        builder: (context) => JobEntriesPage(database: database, job: job),
+        builder: (context) => JobEntriesPage(database: database, jobEntry: job),
       ),
     );
   }
@@ -44,7 +44,7 @@ class JobEntriesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<Job>(
-        stream: database.jobStream(jobID: job.documentId),
+        stream: database.jobStream(jobID: jobEntry.documentId),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             final job = snapshot.data;

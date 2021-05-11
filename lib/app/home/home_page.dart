@@ -1,6 +1,7 @@
 import 'package:firebase_course/app/home/Jobs/Jobs_page.dart';
 import 'package:firebase_course/app/home/account/account_page.dart';
 import 'package:firebase_course/app/home/cupertino_home_scaffold.dart';
+import 'package:firebase_course/app/home/entries/entries_page.dart';
 import 'package:firebase_course/app/home/tab_item.dart';
 import 'package:flutter/material.dart';
 
@@ -26,8 +27,8 @@ class _HomePageState extends State<HomePage> {
       TabItem.job: (_) {
         return JobsPage();
       },
-      TabItem.entries: (_) {
-        return Container();
+      TabItem.entries: (context) {
+        return EntriesPage.create(context);
       },
       TabItem.account: (_) {
         return AccountPage();
